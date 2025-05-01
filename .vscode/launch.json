@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/user/Estruturas de dados Avançados CODE/Trabalho_Final_Grafos2",
+      "program": "/Users/user/Estruturas de dados Avançados CODE/Trabalho_Final_Grafos2/build/Debug/outDebug"
+    }
+  ]
+}
