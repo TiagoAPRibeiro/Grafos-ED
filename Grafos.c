@@ -20,16 +20,20 @@ typedef struct antena1{
 Vertices novo_vertice(Vertices listaAntena, int idAntena, char nome, int linha, int coluna){           
 Vertices novoVertice;
 novoVertice = (Vertices)malloc(sizeof(struct antena1));  
+if(novoVertice != NULL){
 novoVertice->idAntena = idAntena;
 novoVertice->nome = nome;
 novoVertice->linha = linha;
 novoVertice->coluna = coluna;
 novoVertice->adjacentes = NULL;
 novoVertice->seguinte = listaAntena;
-return(listaAntena);
+printf("%d %c %d %d\n", novoVertice->idAntena, novoVertice->nome, novoVertice->linha, novoVertice->coluna);
+return novoVertice;
+}
+return listaAntena;
 }
 
-//os vertices ja estao criados , aqui so fazemos conexoes, por isso é que nao precisamos de linha e coluna.
+
 Vertices novo_adjacente(Vertices listaAntena, int idAntena1, int idAntena2){ // pergunta os numeros que queremos ligar , id1 e id2
 Vertices auxiliar = listaAntena;
 while(auxiliar != NULL){
@@ -48,6 +52,7 @@ while(auxiliar != NULL){
     auxiliar->adjacentes = novo;
     }
     auxiliar = auxiliar->seguinte;
+    
 } 
     return listaAntena;
 }
@@ -64,16 +69,15 @@ Vertices leitura(Vertices listaAntena){
     }
     char nome;
     int id = 1;
-    char vt1, vt2;
     int linha = 1, coluna = 1;
 
     while(fscanf(ler, "%c", &nome) != EOF){
         if(nome != '.' && nome != '\n' && nome != ' '){
         listaAntena = novo_vertice(listaAntena, id, nome, linha, coluna);
-        listaAntena = novo_adjacente(listaAntena, vt1, vt2);
-        printf("Vertices lidos com sucesso !\n");
+        
         id++;
     }
+   
     if (nome == '\n'){
         linha++;
         coluna = 1;
@@ -83,52 +87,76 @@ Vertices leitura(Vertices listaAntena){
         }
     }
 fclose(ler);
+printf("Vertices lidos com sucesso !\n");
+
 return listaAntena;
 }
 
 void listagem(Vertices listaAntena){
-    while(listaAntena != NULL){
-        printf("%d %c %d %d [", listaAntena->idAntena, listaAntena->nome, listaAntena->linha, listaAntena->coluna);
-        Adjacentes auxiliar = listaAntena->adjacentes;
-        while(auxiliar != NULL){
-            printf("%d ", auxiliar->idAntena);
-            auxiliar = auxiliar->seguinte;
-        }
-        printf("]\n");
-        listaAntena = listaAntena->seguinte;
+    if(listaAntena == NULL){
+        printf("Não há Grafos registados na sua lista de Antenas!\n");
+        return;
+    }
+    Vertices actual = listaAntena;
+    while(actual != NULL){
+        printf("%d %c %d %d\n", actual->idAntena, actual->nome, actual->linha, actual->coluna);
+        actual = actual->seguinte;
     }
 }
 
 
+void listagem_adjacente(Vertices listaAntena){
+    if(listaAntena == NULL){
+        printf("Não existem Antenas para criar as suas adjacencias!\n");
+        return;
+    }
+    Vertices temp = listaAntena;
+    while(temp!= NULL){
+        printf("%d %c %d %d tem como adjacencia o vertice [", listaAntena->idAntena, listaAntena->nome, listaAntena->linha, listaAntena->coluna);
+        Adjacentes aux = listaAntena->adjacentes;
+        while(aux!= NULL){
+            printf("%d ", aux->idAntena);
+            aux = aux->seguinte;
+
+        }
+        printf("\n");
+        temp = temp->seguinte;
+    }
+    
+}
+
 
 
 int main(){
-Vertices Grafo = NULL;    
+Vertices grafo = NULL;
+
 int opcao;
 do{
-    printf("1 - ler ficheiro:\n 2 - listar dados:\n 3 - Sair do programa\n");
-    scanf("%d", &opcao);
-    switch (opcao){
-        
-        case 1:
-        Grafo = leitura(Grafo);
-        break;
+printf("\n1- leitura\n 2- listagem\n 3 - listar Adjacente 4\n - sair\n");
+scanf("%d", &opcao);
 
-        case 2:
-        listagem(Grafo);
-        break;
-        
-        case 3:
-        printf("A sair do programa...\n");
-        break;
+switch(opcao){
+case 1:    
+grafo = leitura(grafo);
+break;
 
-        default:
-        printf("Opcao invalida, tente novamente.\n");
-        break;
-        
+case 2:
+listagem(grafo);
+break;
 
-    }
-}while(opcao != 3);
+case 3:
+listagem_adjacente(grafo);
+break;
+
+case 4:
+printf("Sair\n");
+break;
+
+default:
+printf("opcao invalida\n");
+break;
+}
+}while(opcao != 4);
 
 
 
