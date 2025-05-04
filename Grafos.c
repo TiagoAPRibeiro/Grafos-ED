@@ -33,8 +33,7 @@ return novoVertice;
 return listaAntena;
 }
 
-
-Vertices novo_adjacente(Vertices listaAntena, int idAntena1, int idAntena2){ // pergunta os numeros que queremos ligar , id1 e id2
+/*Vertices novo_adjacente(Vertices listaAntena, int idAntena1, int idAntena2){ // pergunta os numeros que queremos ligar , id1 e id2
 Vertices auxiliar = listaAntena;
 while(auxiliar != NULL){
     if(auxiliar->idAntena == idAntena1){ //verifica a condicao se a id antena qualquer existente na lista for == "id de antena que dizemos q queremos ligar" ? verdade,existe  entao:
@@ -55,7 +54,31 @@ while(auxiliar != NULL){
     
 } 
     return listaAntena;
+}*/
+
+Vertices novo_adjacente(Vertices listaAntena){
+Vertices idA = listaAntena;
+    while(idA != NULL){ // vai percorrer a lista ligada
+Vertices idB = idA->seguinte;
+    while(idB != NULL){
+        if(idA->nome == idB->nome && idA->idAntena != idB->idAntena){
+            Adjacentes novoAdjacenteA = (Adjacentes)malloc(sizeof(struct antena2));
+            novoAdjacenteA->idAntena = idB->idAntena;
+            novoAdjacenteA->seguinte = idA->adjacentes;
+            idA->adjacentes = novoAdjacenteA;
+        
+        Adjacentes novoAdjacenteB = (Adjacentes)malloc(sizeof(struct antena2));
+        novoAdjacenteB->idAntena = idA->idAntena;
+        novoAdjacenteB->seguinte = idB->adjacentes;
+        idB->adjacentes = novoAdjacenteB;
+    }
+    idB = idB->seguinte;   
 }
+idA = idA->seguinte; 
+}
+return listaAntena;
+}
+
 
 Vertices leitura(Vertices listaAntena){
     char nome_ficheiro[FICHEIRO];
@@ -106,23 +129,24 @@ void listagem(Vertices listaAntena){
 
 
 void listagem_adjacente(Vertices listaAntena){
-    if(listaAntena == NULL){
-        printf("Não existem Antenas para criar as suas adjacencias!\n");
-        return;
+if(listaAntena == NULL){
+    printf("Não existem antenas para criar adjacentes!\n");
+    return;
+}
+Vertices actual = listaAntena;
+while(actual != NULL){
+    printf("Adjacentes de %c com o ID: (%d): " , actual->nome, actual->idAntena);
+    Adjacentes auxAdj = actual->adjacentes;
+    if(auxAdj == NULL){
+        printf("Nenhum\n");
     }
-    Vertices temp = listaAntena;
-    while(temp!= NULL){
-        printf("%d %c %d %d tem como adjacencia o vertice [", listaAntena->idAntena, listaAntena->nome, listaAntena->linha, listaAntena->coluna);
-        Adjacentes aux = listaAntena->adjacentes;
-        while(aux!= NULL){
-            printf("%d ", aux->idAntena);
-            aux = aux->seguinte;
-
+        while(auxAdj != NULL){
+            printf("%d ", auxAdj->idAntena);
+            auxAdj = auxAdj->seguinte;
         }
         printf("\n");
-        temp = temp->seguinte;
-    }
-    
+        actual = actual->seguinte;
+}
 }
 
 
@@ -132,7 +156,7 @@ Vertices grafo = NULL;
 
 int opcao;
 do{
-printf("\n1- leitura\n 2- listagem\n 3 - listar Adjacente 4\n - sair\n");
+printf("\n1- leitura\n 2- listagem\n 3 - listar Adjacente \n4 - sair\n");
 scanf("%d", &opcao);
 
 switch(opcao){
@@ -145,6 +169,7 @@ listagem(grafo);
 break;
 
 case 3:
+grafo = novo_adjacente(grafo);
 listagem_adjacente(grafo);
 break;
 
@@ -164,3 +189,9 @@ break;
 
     return 0;
 }
+
+
+
+
+
+
