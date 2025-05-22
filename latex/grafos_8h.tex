@@ -1,0 +1,418 @@
+\doxysection{grafos.\+h File Reference}
+\hypertarget{grafos_8h}{}\label{grafos_8h}\index{grafos.h@{grafos.h}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structantena2}{antena2}}
+\item 
+struct \mbox{\hyperlink{structantena1}{antena1}}
+\item 
+struct \mbox{\hyperlink{structregisto}{registo}}
+\item 
+struct \mbox{\hyperlink{structregisto_fila}{registo\+Fila}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{grafos_8h_aacb2feada17ca3f9edcd1c57787cf4ca}{FICHEIRO}}~50
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{grafos_8h_aa0651a23678031bb99f89b8bebffc0ea}\label{grafos_8h_aa0651a23678031bb99f89b8bebffc0ea} 
+typedef struct \mbox{\hyperlink{structantena2}{antena2}} \texorpdfstring{$\ast$}{*} {\bfseries Adjacentes}
+\item 
+\Hypertarget{grafos_8h_a8ec91740cb79e7bfeb7a7a75acb9dcc4}\label{grafos_8h_a8ec91740cb79e7bfeb7a7a75acb9dcc4} 
+typedef struct \mbox{\hyperlink{structantena1}{antena1}} \texorpdfstring{$\ast$}{*} {\bfseries Vertices}
+\item 
+\Hypertarget{grafos_8h_a41c13ac0c414e60c24ba62168f4fdbe3}\label{grafos_8h_a41c13ac0c414e60c24ba62168f4fdbe3} 
+typedef struct \mbox{\hyperlink{structregisto}{registo}} \texorpdfstring{$\ast$}{*} {\bfseries Pilha}
+\item 
+\Hypertarget{grafos_8h_ab4e5a250de75641ef9b9c4bce4dee989}\label{grafos_8h_ab4e5a250de75641ef9b9c4bce4dee989} 
+typedef struct \mbox{\hyperlink{structregisto_fila}{registo\+Fila}} \texorpdfstring{$\ast$}{*} {\bfseries Fila}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_vertices}{Vertices}} \mbox{\hyperlink{grafos_8h_a346f01ca83842ca0ac9606c19f1dfb0d}{novo\+\_\+vertice}} (\mbox{\hyperlink{struct_vertices}{Vertices}} lista\+Antena, int id\+Antena, char nome, int linha, int coluna)
+\begin{DoxyCompactList}\small\item\em Criação de uma nova antena. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_vertices}{Vertices}} \mbox{\hyperlink{grafos_8h_a75715568cbc37d0421598d419dedaea5}{novo\+\_\+adjacente}} (\mbox{\hyperlink{struct_vertices}{Vertices}} lista\+Antena)
+\begin{DoxyCompactList}\small\item\em Criação de uma adjacencia. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_vertices}{Vertices}} \mbox{\hyperlink{grafos_8h_a16236deeb01b39969ecb0f3515da287b}{leitura}} (\mbox{\hyperlink{struct_vertices}{Vertices}} lista\+Antena)
+\begin{DoxyCompactList}\small\item\em Leitura de um ficheiro em formato TXT. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{grafos_8h_a8c21fd159b1b781442133a412e238637}{listagem}} (\mbox{\hyperlink{struct_vertices}{Vertices}} lista\+Antena)
+\begin{DoxyCompactList}\small\item\em Fáz um print da informação em forma de lista das nossas frequencias e respetivas cordenadas. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{grafos_8h_aeaa72a70c7db39ce13c73c280fe81e95}{listagem\+\_\+adjacente}} (\mbox{\hyperlink{struct_vertices}{Vertices}} lista\+Antena)
+\begin{DoxyCompactList}\small\item\em Fáz um print da informação em forma de lista das nossas frequencias, IDs , e adjacencias. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{grafos_8h_aa8b03a19be351564d762cca8b1b17b75}{listagem\+\_\+adjacente\+\_\+filtro}} (\mbox{\hyperlink{struct_vertices}{Vertices}} lista\+Antena, char nome\+Vertice)
+\begin{DoxyCompactList}\small\item\em Fáz um print da informação em forma de lista das nossas frequencias filtrando pelo nome da frequencia que queremos. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_pilha}{Pilha}} \mbox{\hyperlink{grafos_8h_ad8002a5c24da35740d650794c5aa2abf}{push}} (\mbox{\hyperlink{struct_pilha}{Pilha}} pilha\+Antena, int id\+Antena)
+\begin{DoxyCompactList}\small\item\em Função para inserir um novo valor no topo da pilha. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_pilha}{Pilha}} \mbox{\hyperlink{grafos_8h_addd16e4287aeb79af0b2d055b4f04fd6}{pop}} (\mbox{\hyperlink{struct_pilha}{Pilha}} pilha\+Antena)
+\begin{DoxyCompactList}\small\item\em Função para remover um valor do topo da pilha. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_fila}{Fila}} \mbox{\hyperlink{grafos_8h_a9b9325f7768e80015c8e45aa8e1d8c98}{enqueue}} (\mbox{\hyperlink{struct_fila}{Fila}} fila\+Antena, int id\+Antena)
+\begin{DoxyCompactList}\small\item\em Função para inserir um novo valor id no fim da fila. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_fila}{Fila}} \mbox{\hyperlink{grafos_8h_a00d20b97c87f75847dcd00e33053fab4}{dequeue}} (\mbox{\hyperlink{struct_fila}{Fila}} fila\+Antena, int \texorpdfstring{$\ast$}{*}id\+Antena)
+\begin{DoxyCompactList}\small\item\em Função para remover o primeiro Id da fila. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{grafos_8h_af2ac25f193fcc8f6d3269bf8baed3d01}{profundidade\+\_\+todos\+\_\+caminhos}} (\mbox{\hyperlink{struct_vertices}{Vertices}} lista\+Antena, int id\+Inicial, int id\+Destino, int visitados\mbox{[}$\,$\mbox{]}, \mbox{\hyperlink{struct_pilha}{Pilha}} caminho)
+\begin{DoxyCompactList}\small\item\em Função para Encontrar todos os caminhos possiveis entre dois vertices. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{grafos_8h_a7a7f4e385d2a23c196558a31105b7200}{todos\+\_\+os\+\_\+caminhos}} (\mbox{\hyperlink{struct_vertices}{Vertices}} lista\+Antena, int id\+Inicial, int Id\+Destino)
+\begin{DoxyCompactList}\small\item\em Função para imprimir todos os caminhos possiveis entre dois vertices. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{grafos_8h_a0ee5dbcf8b47d2b52e99ff2e1379936d}{pesquisa\+\_\+caminho\+\_\+profundidade}} (\mbox{\hyperlink{struct_vertices}{Vertices}} lista\+Antena, int id\+Inicial)
+\begin{DoxyCompactList}\small\item\em Função que marca os visitados e o caminho possivel de um vertice e seus adjacentes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{grafos_8h_a99366a9138d1ec6d7c0de12746f93202}{pesquisa\+\_\+largura}} (\mbox{\hyperlink{struct_vertices}{Vertices}} lista\+Antena, int id\+Inicial)
+\begin{DoxyCompactList}\small\item\em Função que marca os visitados e o caminho possivel de um vertice e seus adjacentes. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{grafos_8h_a39eee4fc9f9ad704b6f143add84b3e6f}{verificao}} (\mbox{\hyperlink{struct_vertices}{Vertices}} lista\+Antena, int id\+Inicial, int id\+Destino)
+\begin{DoxyCompactList}\small\item\em Função de verificação de dois vertices. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{grafos_8h_a18276d3142f4cd646cde5f3502d8d83a}{verificar\+ID}} (\mbox{\hyperlink{struct_vertices}{Vertices}} lista\+Antena, int id\+Inicial)
+\begin{DoxyCompactList}\small\item\em Função de verificação de existencia de um vertice. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Este arquivo contém as declarações das funções e os seus respetivos comentarios. 
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{grafos_8h_aacb2feada17ca3f9edcd1c57787cf4ca}\index{grafos.h@{grafos.h}!FICHEIRO@{FICHEIRO}}
+\index{FICHEIRO@{FICHEIRO}!grafos.h@{grafos.h}}
+\doxysubsubsection{\texorpdfstring{FICHEIRO}{FICHEIRO}}
+{\footnotesize\ttfamily \label{grafos_8h_aacb2feada17ca3f9edcd1c57787cf4ca} 
+\#define FICHEIRO~50}
+
+Tamanho de array criado para suportar todas as variaveis do tipo ao longo do codigo. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{grafos_8h_a00d20b97c87f75847dcd00e33053fab4}\index{grafos.h@{grafos.h}!dequeue@{dequeue}}
+\index{dequeue@{dequeue}!grafos.h@{grafos.h}}
+\doxysubsubsection{\texorpdfstring{dequeue()}{dequeue()}}
+{\footnotesize\ttfamily \label{grafos_8h_a00d20b97c87f75847dcd00e33053fab4} 
+\mbox{\hyperlink{struct_fila}{Fila}} dequeue (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_fila}{Fila}}}]{fila\+Antena}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{id\+Antena}{}\end{DoxyParamCaption})}
+
+
+
+Função para remover o primeiro Id da fila. 
+
+Esta função remove o primiero Id da fila , e devolve o seu valor. 
+\begin{DoxyParams}{Parameters}
+{\em ID} & Remove o primiero ID da fila.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Remove o primiero ID da fila. 
+\end{DoxyReturn}
+\Hypertarget{grafos_8h_a9b9325f7768e80015c8e45aa8e1d8c98}\index{grafos.h@{grafos.h}!enqueue@{enqueue}}
+\index{enqueue@{enqueue}!grafos.h@{grafos.h}}
+\doxysubsubsection{\texorpdfstring{enqueue()}{enqueue()}}
+{\footnotesize\ttfamily \label{grafos_8h_a9b9325f7768e80015c8e45aa8e1d8c98} 
+\mbox{\hyperlink{struct_fila}{Fila}} enqueue (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_fila}{Fila}}}]{fila\+Antena}{, }\item[{int}]{id\+Antena}{}\end{DoxyParamCaption})}
+
+
+
+Função para inserir um novo valor id no fim da fila. 
+
+Esta função adiciona um novo elemento no fim da fila. 
+\begin{DoxyParams}{Parameters}
+{\em ID} & Adiciona o ID no fim da fila.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Adiciona o valor Id lido no fim da fila. 
+\end{DoxyReturn}
+\Hypertarget{grafos_8h_a16236deeb01b39969ecb0f3515da287b}\index{grafos.h@{grafos.h}!leitura@{leitura}}
+\index{leitura@{leitura}!grafos.h@{grafos.h}}
+\doxysubsubsection{\texorpdfstring{leitura()}{leitura()}}
+{\footnotesize\ttfamily \label{grafos_8h_a16236deeb01b39969ecb0f3515da287b} 
+\mbox{\hyperlink{struct_vertices}{Vertices}} leitura (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vertices}{Vertices}}}]{lista\+Antena}{}\end{DoxyParamCaption})}
+
+
+
+Leitura de um ficheiro em formato TXT. 
+
+Esta função faz a leitura de um ficheiro no formato txt, onde recebe informaçoes do ficheiro com frequencias , linhas e colunas, é lhe atriubuido um numero ID aquando a leitura e guarda a nossa lista ligada todas as suas informaçoes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em nome} & Recebe as frequencias de todas as antenas presentes no ficheiro. \\
+\hline
+{\em cordenadas} & Recebe todas as cordenadas do ficheiro txt. \\
+\hline
+{\em ID} & Atribui um numero id a cada vertice.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Apos a sua leitura , em conjunto com as funcoes destinadas as suas criaçoes , guarda na lista ligada as novas frequencias com as respetivas cordenadas. 
+\end{DoxyReturn}
+\Hypertarget{grafos_8h_a8c21fd159b1b781442133a412e238637}\index{grafos.h@{grafos.h}!listagem@{listagem}}
+\index{listagem@{listagem}!grafos.h@{grafos.h}}
+\doxysubsubsection{\texorpdfstring{listagem()}{listagem()}}
+{\footnotesize\ttfamily \label{grafos_8h_a8c21fd159b1b781442133a412e238637} 
+void listagem (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vertices}{Vertices}}}]{lista\+Antena}{}\end{DoxyParamCaption})}
+
+
+
+Fáz um print da informação em forma de lista das nossas frequencias e respetivas cordenadas. 
+
+Esta função ajuda na consulta de informação das Antenas , conseguimos ir verificando em forma de lista as suas frequençias , cordenadas e ID para ser de melhor acesso visual a sua mudança na sua manipulação. 
+\begin{DoxyParams}{Parameters}
+{\em ID} & -\/ id dos vertices. \\
+\hline
+{\em nome} & Frequançia da Antena. \\
+\hline
+{\em cordenadas} & Cordenadas da Antena.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Cria uma lista da informaçao atualizada da nossa Lista Ligada. 
+\end{DoxyReturn}
+\Hypertarget{grafos_8h_aeaa72a70c7db39ce13c73c280fe81e95}\index{grafos.h@{grafos.h}!listagem\_adjacente@{listagem\_adjacente}}
+\index{listagem\_adjacente@{listagem\_adjacente}!grafos.h@{grafos.h}}
+\doxysubsubsection{\texorpdfstring{listagem\_adjacente()}{listagem\_adjacente()}}
+{\footnotesize\ttfamily \label{grafos_8h_aeaa72a70c7db39ce13c73c280fe81e95} 
+void listagem\+\_\+adjacente (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vertices}{Vertices}}}]{lista\+Antena}{}\end{DoxyParamCaption})}
+
+
+
+Fáz um print da informação em forma de lista das nossas frequencias, IDs , e adjacencias. 
+
+Esta função lista todas as antenas de vertices , mas com a listagem já das suas adjacencias. 
+\begin{DoxyParams}{Parameters}
+{\em ID} & Id dos vertices. \\
+\hline
+{\em nome} & Frequançia da Antena. \\
+\hline
+{\em adjacentes} & Adjacencias\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Cria uma lista da informaçao atualizada da nossa Lista Ligada, agora com os adjacentes 
+\end{DoxyReturn}
+\Hypertarget{grafos_8h_aa8b03a19be351564d762cca8b1b17b75}\index{grafos.h@{grafos.h}!listagem\_adjacente\_filtro@{listagem\_adjacente\_filtro}}
+\index{listagem\_adjacente\_filtro@{listagem\_adjacente\_filtro}!grafos.h@{grafos.h}}
+\doxysubsubsection{\texorpdfstring{listagem\_adjacente\_filtro()}{listagem\_adjacente\_filtro()}}
+{\footnotesize\ttfamily \label{grafos_8h_aa8b03a19be351564d762cca8b1b17b75} 
+void listagem\+\_\+adjacente\+\_\+filtro (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vertices}{Vertices}}}]{lista\+Antena}{, }\item[{char}]{nome\+Vertice}{}\end{DoxyParamCaption})}
+
+
+
+Fáz um print da informação em forma de lista das nossas frequencias filtrando pelo nome da frequencia que queremos. 
+
+Esta função pesquisa e lista as antenas vertices atravez do filtro do nome da antena que queremos ler.
+
+
+\begin{DoxyParams}{Parameters}
+{\em nome} & Frequançia da Antena. \\
+\hline
+{\em ID} & id dos vertices. \\
+\hline
+{\em \doxylink{struct_adjacentes}{Adjacentes}} & Adjacencias.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Cria uma lista da informaçao atraves da pesquisa por nome da antena. 
+\end{DoxyReturn}
+\Hypertarget{grafos_8h_a75715568cbc37d0421598d419dedaea5}\index{grafos.h@{grafos.h}!novo\_adjacente@{novo\_adjacente}}
+\index{novo\_adjacente@{novo\_adjacente}!grafos.h@{grafos.h}}
+\doxysubsubsection{\texorpdfstring{novo\_adjacente()}{novo\_adjacente()}}
+{\footnotesize\ttfamily \label{grafos_8h_a75715568cbc37d0421598d419dedaea5} 
+\mbox{\hyperlink{struct_vertices}{Vertices}} novo\+\_\+adjacente (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vertices}{Vertices}}}]{lista\+Antena}{}\end{DoxyParamCaption})}
+
+
+
+Criação de uma adjacencia. 
+
+Esta função atribui através do nome igual a sua adjacencia , criando um grafo completo entre todos os vertices de Antenas.
+
+
+\begin{DoxyParams}{Parameters}
+{\em nome} & Faz a verificação de frequencias iguais atravez do nome.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Cria uma adjacencia entre vertices com o mesmo nome. 
+\end{DoxyReturn}
+\Hypertarget{grafos_8h_a346f01ca83842ca0ac9606c19f1dfb0d}\index{grafos.h@{grafos.h}!novo\_vertice@{novo\_vertice}}
+\index{novo\_vertice@{novo\_vertice}!grafos.h@{grafos.h}}
+\doxysubsubsection{\texorpdfstring{novo\_vertice()}{novo\_vertice()}}
+{\footnotesize\ttfamily \label{grafos_8h_a346f01ca83842ca0ac9606c19f1dfb0d} 
+\mbox{\hyperlink{struct_vertices}{Vertices}} novo\+\_\+vertice (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vertices}{Vertices}}}]{lista\+Antena}{, }\item[{int}]{id\+Antena}{, }\item[{char}]{nome}{, }\item[{int}]{linha}{, }\item[{int}]{coluna}{}\end{DoxyParamCaption})}
+
+
+
+Criação de uma nova antena. 
+
+Esta função cria uma nova antena que recebe como parametro o nome da sua frequencia assim como as suas cordenadas, de modo sequencial é lhe atribuido um numero de ID. 
+\begin{DoxyParams}{Parameters}
+{\em id\+Antena} & ID atribuido. \\
+\hline
+{\em nome} & é a sua frequencia. \\
+\hline
+{\em linha} & linha onde se encontra na cordenada. \\
+\hline
+{\em coluna} & coluna onde se encontra na cordenada.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Toda a estrutura de uma Antena(\+Vertice) nova criada. 
+\end{DoxyReturn}
+\Hypertarget{grafos_8h_a0ee5dbcf8b47d2b52e99ff2e1379936d}\index{grafos.h@{grafos.h}!pesquisa\_caminho\_profundidade@{pesquisa\_caminho\_profundidade}}
+\index{pesquisa\_caminho\_profundidade@{pesquisa\_caminho\_profundidade}!grafos.h@{grafos.h}}
+\doxysubsubsection{\texorpdfstring{pesquisa\_caminho\_profundidade()}{pesquisa\_caminho\_profundidade()}}
+{\footnotesize\ttfamily \label{grafos_8h_a0ee5dbcf8b47d2b52e99ff2e1379936d} 
+void pesquisa\+\_\+caminho\+\_\+profundidade (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vertices}{Vertices}}}]{lista\+Antena}{, }\item[{int}]{id\+Inicial}{}\end{DoxyParamCaption})}
+
+
+
+Função que marca os visitados e o caminho possivel de um vertice e seus adjacentes. 
+
+Esta função recebe um id inicial de um grafo com o mesmo nome , e traça os seus caminhos visitados , assim como o caminho encontrado , usando a pesquisa em profundidade. 
+\begin{DoxyParams}{Parameters}
+{\em ID} & Recebe o id inicial \\
+\hline
+{\em visitados} & Visita em profundidade os vertives e traca os seus caminhos visitados. \\
+\hline
+{\em caminho} & Traça o caminho encontrado. \\
+\hline
+{\em cordenadas} & Marca as suas cordenadas no grafo. \\
+\hline
+{\em pilha} & Usa recurso de uma pilha.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Devolve os caminhos visitados e o caminho encontrado de uma pesquisa em profundidade atraves de um vertice inicial. 
+\end{DoxyReturn}
+\Hypertarget{grafos_8h_a99366a9138d1ec6d7c0de12746f93202}\index{grafos.h@{grafos.h}!pesquisa\_largura@{pesquisa\_largura}}
+\index{pesquisa\_largura@{pesquisa\_largura}!grafos.h@{grafos.h}}
+\doxysubsubsection{\texorpdfstring{pesquisa\_largura()}{pesquisa\_largura()}}
+{\footnotesize\ttfamily \label{grafos_8h_a99366a9138d1ec6d7c0de12746f93202} 
+void pesquisa\+\_\+largura (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vertices}{Vertices}}}]{lista\+Antena}{, }\item[{int}]{id\+Inicial}{}\end{DoxyParamCaption})}
+
+
+
+Função que marca os visitados e o caminho possivel de um vertice e seus adjacentes. 
+
+Esta função recebe um id inicial de um grafo com o mesmo nome , e traça os seus caminhos visitados , assim como o caminho encontrado , usando a pesquisa em Largura com recurso a uma fila. 
+\begin{DoxyParams}{Parameters}
+{\em ID} & Recebe o id inicial \\
+\hline
+{\em visitados} & Visita em fila os vertives e traca os seus caminhos visitados. \\
+\hline
+{\em caminho} & Traça o caminho encontrado. \\
+\hline
+{\em cordenadas} & Marca as suas cordenadas no grafo. \\
+\hline
+{\em fila} & Usa recurso a uma fila.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Devolve os caminhos visitados e o caminho encontrado de uma pesquisa em Largura atraves de um vertice inicial. 
+\end{DoxyReturn}
+\Hypertarget{grafos_8h_addd16e4287aeb79af0b2d055b4f04fd6}\index{grafos.h@{grafos.h}!pop@{pop}}
+\index{pop@{pop}!grafos.h@{grafos.h}}
+\doxysubsubsection{\texorpdfstring{pop()}{pop()}}
+{\footnotesize\ttfamily \label{grafos_8h_addd16e4287aeb79af0b2d055b4f04fd6} 
+\mbox{\hyperlink{struct_pilha}{Pilha}} pop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pilha}{Pilha}}}]{pilha\+Antena}{}\end{DoxyParamCaption})}
+
+
+
+Função para remover um valor do topo da pilha. 
+
+Esta função remove o elemento ID do topo da pilha. 
+\begin{DoxyParams}{Parameters}
+{\em ID} & Remove o valor do Id na pilha e retorna um novo topo da pilha.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Remove um valor no topo da pilha. 
+\end{DoxyReturn}
+\Hypertarget{grafos_8h_af2ac25f193fcc8f6d3269bf8baed3d01}\index{grafos.h@{grafos.h}!profundidade\_todos\_caminhos@{profundidade\_todos\_caminhos}}
+\index{profundidade\_todos\_caminhos@{profundidade\_todos\_caminhos}!grafos.h@{grafos.h}}
+\doxysubsubsection{\texorpdfstring{profundidade\_todos\_caminhos()}{profundidade\_todos\_caminhos()}}
+{\footnotesize\ttfamily \label{grafos_8h_af2ac25f193fcc8f6d3269bf8baed3d01} 
+void profundidade\+\_\+todos\+\_\+caminhos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vertices}{Vertices}}}]{lista\+Antena}{, }\item[{int}]{id\+Inicial}{, }\item[{int}]{id\+Destino}{, }\item[{int}]{visitados}{\mbox{[}$\,$\mbox{]}, }\item[{\mbox{\hyperlink{struct_pilha}{Pilha}}}]{caminho}{}\end{DoxyParamCaption})}
+
+
+
+Função para Encontrar todos os caminhos possiveis entre dois vertices. 
+
+Esta função recebe um ID inicial , e um ID destino , faz a sua travessia em profundidade , com recurso a pilha num sistema LIFO ,e encontra todos os caminhos possiveis entre os dois vertices escolhidos. 
+\begin{DoxyParams}{Parameters}
+{\em IDs} & Recebe os IDs da procura. \\
+\hline
+{\em caminho} & Traça um caminho com recurso a pilha. \\
+\hline
+{\em nome} & Antenas do mesmo grafo , nome.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Um caminho em profundidade entre dois \doxylink{struct_vertices}{Vertices} de Antenas da mesmo frequencia. 
+\end{DoxyReturn}
+\Hypertarget{grafos_8h_ad8002a5c24da35740d650794c5aa2abf}\index{grafos.h@{grafos.h}!push@{push}}
+\index{push@{push}!grafos.h@{grafos.h}}
+\doxysubsubsection{\texorpdfstring{push()}{push()}}
+{\footnotesize\ttfamily \label{grafos_8h_ad8002a5c24da35740d650794c5aa2abf} 
+\mbox{\hyperlink{struct_pilha}{Pilha}} push (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pilha}{Pilha}}}]{pilha\+Antena}{, }\item[{int}]{id\+Antena}{}\end{DoxyParamCaption})}
+
+
+
+Função para inserir um novo valor no topo da pilha. 
+
+Esta função cria um no com o valor que le no topo da pilha. 
+\begin{DoxyParams}{Parameters}
+{\em ID} & Guarda o valor do Id na pilha.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Um valor no topo da pilha. 
+\end{DoxyReturn}
+\Hypertarget{grafos_8h_a7a7f4e385d2a23c196558a31105b7200}\index{grafos.h@{grafos.h}!todos\_os\_caminhos@{todos\_os\_caminhos}}
+\index{todos\_os\_caminhos@{todos\_os\_caminhos}!grafos.h@{grafos.h}}
+\doxysubsubsection{\texorpdfstring{todos\_os\_caminhos()}{todos\_os\_caminhos()}}
+{\footnotesize\ttfamily \label{grafos_8h_a7a7f4e385d2a23c196558a31105b7200} 
+void todos\+\_\+os\+\_\+caminhos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vertices}{Vertices}}}]{lista\+Antena}{, }\item[{int}]{id\+Inicial}{, }\item[{int}]{Id\+Destino}{}\end{DoxyParamCaption})}
+
+
+
+Função para imprimir todos os caminhos possiveis entre dois vertices. 
+
+Esta função é complementar a funcção anterior , serve para dar print de todos os caminhos.
+
+\begin{DoxyReturn}{Returns}
+Complementar a funcao anterior recursiva , que visa dar print a todos os caminhos entre dois vertices. 
+\end{DoxyReturn}
+\Hypertarget{grafos_8h_a39eee4fc9f9ad704b6f143add84b3e6f}\index{grafos.h@{grafos.h}!verificao@{verificao}}
+\index{verificao@{verificao}!grafos.h@{grafos.h}}
+\doxysubsubsection{\texorpdfstring{verificao()}{verificao()}}
+{\footnotesize\ttfamily \label{grafos_8h_a39eee4fc9f9ad704b6f143add84b3e6f} 
+int verificao (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vertices}{Vertices}}}]{lista\+Antena}{, }\item[{int}]{id\+Inicial}{, }\item[{int}]{id\+Destino}{}\end{DoxyParamCaption})}
+
+
+
+Função de verificação de dois vertices. 
+
+Esta função serve para complementar uma funcao de ID inicila e ID destino , e serve como verificação de que os dois vertices de procura , os seus IDs fazem parte do mesmo grafo e se sao adjacente. 
+\begin{DoxyParams}{Parameters}
+{\em ID} & Recebe o id inicial e o destino \\
+\hline
+{\em \doxylink{struct_adjacentes}{Adjacentes}} & Verifica se são adjacentes\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Verifica se os dois IDs de vertices que queremos na pesquisa fazem parter do mesmo grafo de adjacencia. 
+\end{DoxyReturn}
+\Hypertarget{grafos_8h_a18276d3142f4cd646cde5f3502d8d83a}\index{grafos.h@{grafos.h}!verificarID@{verificarID}}
+\index{verificarID@{verificarID}!grafos.h@{grafos.h}}
+\doxysubsubsection{\texorpdfstring{verificarID()}{verificarID()}}
+{\footnotesize\ttfamily \label{grafos_8h_a18276d3142f4cd646cde5f3502d8d83a} 
+int verificar\+ID (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vertices}{Vertices}}}]{lista\+Antena}{, }\item[{int}]{id\+Inicial}{}\end{DoxyParamCaption})}
+
+
+
+Função de verificação de existencia de um vertice. 
+
+Esta função serve para fazer a verificação da existencia do vertice que queremos usar na lista ligada , em caso de nao existir , da um erro. 
+\begin{DoxyParams}{Parameters}
+{\em ID} & Recebe o id inicial de procura\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Verifica a existencia do Id que procuramos na lista ligada. 
+\end{DoxyReturn}
